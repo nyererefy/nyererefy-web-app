@@ -13,11 +13,13 @@ import ElectionsList from "./components/elections/electionsList";
 import NavHeader from "./layout/navHeader";
 import SubcategoriesList from "./components/subcategory/subcategoriesList";
 import SubcategoriesView from "./components/subcategory/subcategoriesView";
+import Login from "./components/auth/login";
+import Logout from "./components/auth/logout";
 
 // Create an http link:
 const httpLink = new HttpLink({
   uri: "http://localhost:2000/graphql",
-  credentials: "same-origin"
+  credentials: "include"
 });
 
 // Create a WebSocket link:
@@ -63,6 +65,8 @@ const App = () => (
             path="/subcategory/:subcategoryId"
             component={SubcategoriesView}
           />
+          <Route path="/login/" component={Login} />
+          <Route path="/logout/" component={Logout} />
         </Container>
       </BrowserRouter>
     </div>

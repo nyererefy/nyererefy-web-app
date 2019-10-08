@@ -61,3 +61,18 @@ export const CREATE_CANDIDATE = gql`
     }
   }
 `;
+
+export const LOGIN = gql`
+  mutation($input: LoginInput!) {
+    login(input: $input) {
+      avatar
+      name
+    }
+  }
+`;
+
+export const LOGOUT = gql`
+  mutation {
+    logout
+  }
+`;
